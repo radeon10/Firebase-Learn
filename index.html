@@ -1,43 +1,73 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belajar Firebase</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar Firebase</title>
 
-    <style>
-        body{
-            margin:0;
-            height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            flex-direction:column;
-            background:#f5f5f5;
-            font-family:Arial,sans-serif;
-        }
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background:#f5f5f5;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      margin:0;
+    }
 
-        h1{
-            color:#333;
-        }
+    .card{
+      background:white;
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      box-shadow:0 0 15px rgba(0,0,0,.15);
+    }
 
-        button{
-            padding:15px 30px;
-            font-size:18px;
-            border:none;
-            border-radius:10px;
-            cursor:pointer;
-        }
-    </style>
+    button{
+      padding:12px 25px;
+      border:none;
+      border-radius:10px;
+      background:#ff6900;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#e65f00;
+    }
+  </style>
 </head>
-
 <body>
 
-<h1>Belajar Firebase 🚀</h1>
+<div class="card">
+  <h1>Belajar Firebase 🚀</h1>
+  <p>Firebase berhasil terhubung.</p>
 
-<p>Nanti tombol ini akan mengirim notifikasi ke Telegram.</p>
+  <button id="btn">Klik Aku</button>
+</div>
 
-<button>Klik Aku</button>
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBo_S8GZrO4dutEfVp9db-mDTrBghrt-e8",
+  authDomain: "fir-learn-6cfc9.firebaseapp.com",
+  projectId: "fir-learn-6cfc9",
+  storageBucket: "fir-learn-6cfc9.firebasestorage.app",
+  messagingSenderId: "640924237734",
+  appId: "1:640924237734:web:aed5c5ce15367e9ff9d967"
+};
+
+const app = initializeApp(firebaseConfig);
+
+document.getElementById("btn").addEventListener("click", () => {
+  alert("🎉 Firebase berhasil terhubung!");
+});
+
+</script>
 
 </body>
 </html>
